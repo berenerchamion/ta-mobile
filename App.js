@@ -4,6 +4,8 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import devToolsEnhancer from 'remote-redux-devtools';
 import reducer from './reducers'
+import { styles } from './utils/styles'
+import PostList from './components/PostList'
 
 export default class App extends React.Component {
   render() {
@@ -19,15 +21,6 @@ export default class App extends React.Component {
           <Text>Shake your phone to open the developer menu.</Text>
         </View>
       </Provider>
-    );
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

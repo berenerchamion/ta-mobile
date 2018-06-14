@@ -1,23 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { StyleSheet, Text, View } from 'react-native';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import devToolsEnhancer from 'remote-redux-devtools';
-import reducer from './reducers'
-import { styles } from './utils'
+import { styles } from '../utils/styles'
 
-export default class PostList extends React.Component {
+class PostList extends React.Component {
   render() {
     return (
-      <Provider store={
-        createStore(reducer, 
-        devToolsEnhancer({suppressConnectErrors: false,})
-        )
-      }>
-        <View style={styles.container}>
-          <Text>Here's the list...</Text>
-        </View>
-      </Provider>
+      <View style={styles.container}>
+        <Text>Here's the list...</Text>
+      </View>
     )
   }
 }
+
+function mapStateToProps (state){
+  return {
+    posts: state.posts
+  }
+}
+
+export default connect (mapStateToProps,)(PostList)
