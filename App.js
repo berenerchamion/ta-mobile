@@ -63,6 +63,10 @@ const RootStack = createStackNavigator(
   {
     Main: MainStack,
   },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  },
 )
 
 
