@@ -75,7 +75,7 @@ export default class App extends React.Component {
     return (
       <Provider store={
         createStore(reducer, 
-        devToolsEnhancer({suppressConnectErrors: false,})
+        devToolsEnhancer({suppressConnectErrors: false, port:8000})
         )
       }>
         <RootStack />

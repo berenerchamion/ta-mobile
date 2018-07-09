@@ -4,8 +4,7 @@ export const TA_MOBILE_STORAGE_KEY = 'TAMobile:postsv1'
 const api = process.env.TA_MOBILE_API_URL
 
 export const fetchPosts = () => {
-  return fetch(`${api}/posts`, { headers })
-  .then((res) => res.json())
+  console.log(api + '/posts')
 }
 
 export const fetchPost = key => {
@@ -30,7 +29,7 @@ export const savePost = key => {
 }
 
 
- * Function scraped from Stack Overflow: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+ /* Function scraped from Stack Overflow: https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
  * @returns {string}
  */
 
